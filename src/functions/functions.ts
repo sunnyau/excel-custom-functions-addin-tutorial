@@ -1,5 +1,7 @@
 ﻿/* global clearInterval, console, CustomFunctions, setInterval */
 
+import { apiClient } from "../api/apiclient";
+
 /**
  * Adds two numbers.
  * @customfunction
@@ -63,4 +65,13 @@ export function logMessage(message: string): string {
   console.log(message);
 
   return message;
+}
+
+/**
+ * localhost / health
+ * @customfunction HEALTH
+ */
+export async function health(): Promise<string> {
+  console.info("functions.ts health");
+  return apiClient.callApi();
 }

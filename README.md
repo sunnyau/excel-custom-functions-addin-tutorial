@@ -26,13 +26,27 @@ The terminal should show you a link to open the excel file on web with "Launchin
 
 ## Problem solving
 
-If you see this error message on Excel web, "cannot access manifest url at https://127.0.0.1:3000/manifest.xml Please ensure the url is accessible", you need to stop the existing 127.0.0.1 web server. The easiest way is to reboot your laptop.
+If you see this error message on Excel web, "cannot access manifest url at https://127.0.0.1:3000/manifest.xml Please ensure the url is accessible"
+
+you need to stop the existing 127.0.0.1 web server. You an choose one of them, in this order
+
+1. run `npm stop`
+2. run `npx kill-port 3000`
+3. Reboot your laptop
+4. Use a different port by replacing 3000 to a new number in all your files.
 
 ## code development
 
 If you change your code ( e.g. taskpane.html ) and save it, you will instantly see the result on Excel, with or without refreshing the web browser.
 
+## Where to see console.log message
+
+Turn on your Microsoft Edge -> More tools -> Developer tools. Then click the console icon ( top middle )
+
 ## To stop the local web server
 
 `npm run stop`
 
+## To clear Excel (web) addin
+
+Open Microsoft Edge browser -> Privacy, search and services -> Clear browsing data now -> clear everything.
