@@ -1,7 +1,5 @@
 ﻿/* global clearInterval, console, CustomFunctions, setInterval */
 
-import { apiClient } from "../api/apiclient";
-
 /**
  * Adds two numbers.
  * @customfunction
@@ -43,7 +41,10 @@ export function currentTime(): string {
  * @param incrementBy Amount to increment
  * @param invocation Custom function handler
  */
-export function increment(incrementBy: number, invocation: CustomFunctions.StreamingInvocation<number>): void {
+export function increment(
+  incrementBy: number,
+  invocation: CustomFunctions.StreamingInvocation<number>
+): void {
   let result = 0;
   const timer = setInterval(() => {
     result += incrementBy;
@@ -65,13 +66,4 @@ export function logMessage(message: string): string {
   console.log(message);
 
   return message;
-}
-
-/**
- * localhost / health
- * @customfunction HEALTH
- */
-export async function health(): Promise<string> {
-  console.info("functions.ts health");
-  return apiClient.callApi();
 }
